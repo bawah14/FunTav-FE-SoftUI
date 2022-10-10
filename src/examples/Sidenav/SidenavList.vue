@@ -110,7 +110,7 @@ export default {
   },
   data() {
     return {
-      title: "Soft UI Dashboard PRO",
+      title: "FunTav E-Travel",
       controls: "dashboardsExamples",
       isActive: "active",
     };
