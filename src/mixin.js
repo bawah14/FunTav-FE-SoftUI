@@ -3,8 +3,8 @@ export default {
         return {
             appName: "FunTav E-Travel",
             sidebarColor: "dark",
-            operationUrl: location.protocol+'//olympicgoes.com:82/xPDF/', 
-            apiReport: '//172.18.129.235:81/',
+            operationUrl: location.protocol+'', 
+            apiReport: '',
             apiOperationUrl: '',
         };
     },
