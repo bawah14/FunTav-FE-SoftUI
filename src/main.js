@@ -22,8 +22,10 @@ import SoftUIDashboard from "./soft-ui-dashboard";
 import mixin from "./mixin";
 import Loading from 'vue-loading-overlay';
 import 'vue-loading-overlay/dist/vue-loading.css';
-import axios from 'axios'
-import VueAxios from 'vue-axios'
+import axios from 'axios';
+import VueAxios from 'vue-axios';
+import VueSweetalert2 from 'vue-sweetalert2';
+import 'sweetalert2/dist/sweetalert2.min.css';
 
 
 const appInstance = createApp(App);
@@ -31,6 +33,7 @@ appInstance.use(store);
 appInstance.use(router);
 appInstance.use(SoftUIDashboard);
 appInstance.use(Loading);
-appInstance.use(VueAxios, axios)
+appInstance.use(VueSweetalert2);
+appInstance.use(VueAxios, axios);
 appInstance.mixin(mixin);
 appInstance.mount("#app");

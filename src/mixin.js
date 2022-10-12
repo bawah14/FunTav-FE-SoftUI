@@ -41,5 +41,95 @@ export default {
                 return Promise.reject(error.response ? error.response: 'ops something went wrong')
             }
         },
+        async apiPosts(url, params = {}) {  //'application/x-www-form-urlencoded'
+            let loader = this.$loading.show({
+                "z-index": 999999,
+            });
+            var headers = { 
+                accept: '*/*', 'Content-Type': 'application/json',
+                "Access-Control-Allow-Origin": "*"
+            }
+            try {
+                const response = await this.axios.post(this.apiOperationUrl + url, params, {headers});
+                loader.hide();
+                return {
+                    data	:   response.data,
+                    status	:   response.status
+                }
+            } catch (error) {
+                loader.hide();
+                return {
+                    data	:   error.response.data,
+                    status	:	error.response.status
+                }   
+            }
+        },
+        
+        async apiDeletes(url, params = {}) {
+            let loader = this.$loading.show({
+                "z-index": 999999,
+            });
+            var headers = {
+                "Access-Control-Allow-Origin": "*"
+            }
+            try {
+                const response = await this.axios.delete(this.apiOperationUrl + url, params, {headers});
+                loader.hide();
+                return {
+                    data	:   response.data,
+                    status	:   response.status
+                }
+            } catch (error) {
+                loader.hide();
+                return {
+                    data	:   error.response.data,
+                    status	:	error.response.status
+                }   
+            }
+        },
+        async apiPuts(url, params = {}) {
+            let loader = this.$loading.show({
+                "z-index": 999999,
+            });
+            var headers = {
+                "Access-Control-Allow-Origin": "*"
+            }
+            try {
+                const response = await this.axios.put(this.apiOperationUrl + url, params, {headers});
+                loader.hide();
+                return {
+                    data	:   response.data,
+                    status	:   response.status
+                }
+            } catch (error) {
+                loader.hide();
+                return {
+                    data	:   error.response.data,
+                    status	:	error.response.status
+                }   
+            }
+        },
+        async apiPatchs(url, params = {}) {
+            let loader = this.$loading.show({
+                "z-index": 999999,
+            });
+            var headers = {
+                "Access-Control-Allow-Origin": "*"
+            }
+            try {
+                const response = await this.axios.patch(this.apiOperationUrl + url, params, {headers});
+                loader.hide();
+                return {
+                    data	:   response.data,
+                    status	:   response.status,
+                }
+            } catch (error) {
+                loader.hide();
+                return {
+                    data	:   error.response.data,
+                    status	:	error.response.status
+                }   
+            }
+        },
     }
 }
