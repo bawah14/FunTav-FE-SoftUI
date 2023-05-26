@@ -11,7 +11,7 @@
         v-bind="$attrs"
         :class="isBlur ? 'text-dark' : 'text-white'"
       >
-        Soft UI Dashboard
+        FunTav E-Travel
       </router-link>
       <button
         class="navbar-toggler shadow-none ms-2"
@@ -75,7 +75,7 @@
             </router-link>
           </li>
         </ul>
-        <ul class="navbar-nav d-lg-block d-none">
+        <!-- <ul class="navbar-nav d-lg-block d-none">
           <li class="nav-item">
             <a
               href="https://www.creative-tim.com/product/vue-soft-ui-dashboard"
@@ -84,7 +84,7 @@
               >Free download</a
             >
           </li>
-        </ul>
+        </ul> -->
       </div>
     </div>
   </nav>

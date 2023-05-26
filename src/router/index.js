@@ -8,6 +8,7 @@ import Rtl from "@/views/Rtl.vue";
 import SignIn from "@/views/SignIn.vue";
 import SignUp from "@/views/SignUp.vue";
 import Test from "@/views/Test.vue";
+import Landing from "@/views/Landing.vue";
 
 const routes = [
   {
@@ -59,6 +60,11 @@ const routes = [
     path: "/test",
     name: "Test",
     component: Test,
+  },
+  {
+    path: "/landing",
+    name: "Landing",
+    component: Landing,
   },
 ];
 
