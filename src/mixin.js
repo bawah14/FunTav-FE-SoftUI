@@ -5,7 +5,7 @@ export default {
             sidebarColor: "dark",
             operationUrl: location.protocol+'', 
             apiReport: '',
-            apiOperationUrl: '',
+            apiOperationUrl: 'http://localhost/phpCrud/',
         };
     },
     created(){
