@@ -131,5 +131,45 @@ export default {
                 }   
             }
         },
+        setCreating(){
+            this.create = true
+            this.update = false
+            this.view = false
+        },
+        setLanding(){
+            this.$parent.create = false
+            this.$parent.update = false
+            this.$parent.view = false
+        },
+        setUpdating( id ){
+            this.create = false
+            this.update = id
+            this.view = false
+        },
+        setViewing( id ){
+            this.create = false
+            this.update = false
+            this.view = id
+        },
+        showModalConfirm(fun,action,id) {
+            this.$swal({
+              title: 'Are you sure to '+action+' ?',
+              text: 'You can\'t revert your action',
+              type: 'warning',
+              showCancelButton: true,
+              confirmButtonText: 'Yes',
+              cancelButtonText: 'No',
+              showCloseButton: true,
+              showLoaderOnConfirm: true
+            }).then((result) => {
+                console.log()
+                if(result.isConfirmed){
+                    this[fun](id)
+                }
+            })
+        },
+        showModalInfo(head,body,icon = "info"){
+            this.$swal(head, body, icon)
+        }
     }
 }
